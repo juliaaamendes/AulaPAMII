@@ -1,0 +1,1 @@
+export const API_URL = "https://big-fans-wait.loca.lt/";
