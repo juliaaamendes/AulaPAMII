@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, TextInput, Button } from "react-native";
-import styles from "./styles/styles";
+import styles from "../styles/styles";
 import { createPerson, updatePerson } from "../servers/peopleCrud";
 
 export default function AddEditScreen({ route, navigation }) {
@@ -22,44 +22,43 @@ export default function AddEditScreen({ route, navigation }) {
 
     navigation.goBack();
   }
+  return(
+      <View style={styles.container}>
+        <TextInput
+          placeholder="First Name"
+          value={firstName}
+          onChangeText={setFirstName}
+        />
+    
+        <TextInput
+          placeholder="Last Name"
+          value={lastName}
+          onChangeText={setLastName}
+        />
+    
+        <TextInput
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+        />
+
+        <TextInput
+            placeholder="Phone"
+            value={phone}
+            onChangeText={setPhone}
+            keyboardType="phone-pad"
+        />
+    
+        <Button
+          title="Salvar"
+          onPress={[save, () => navigation.goBack()]}
+        />
+    
+        <Button
+          title="Cancelar"
+          onPress={() => navigation.goBack()}
+        />
+      </View>
+    )
 }
-
-return(
-    <View style={styles.container}>
-      <TextInput
-        placeholder="First Name"
-        value={firstName}
-        onChangeText={setFirstName}
-      />
-  
-      <TextInput
-        placeholder="Last Name"
-        value={lastName}
-        onChangeText={setLastName}
-      />
-  
-      <TextInput
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-      />
-
-      <TextInput
-          placeholder="Phone"
-          value={phone}
-          onChangeText={setPhone}
-          keyboardType="phone-pad"
-      />
-  
-      <Button
-        title="Salvar"
-        onPress={save}
-      />
-  
-      <Button
-        title="Cancelar"
-        onPress={() => navigation.goBack()}
-      />
-    </View>
-  )
