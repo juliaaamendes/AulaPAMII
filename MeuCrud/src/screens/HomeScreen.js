@@ -52,13 +52,9 @@ function CardPersonal({item, navigation, refresh}){
     return(
       <View style={styles.card}>
         <View>
-          <Text style={styles.name}>
-            {item.firstName}
-          </Text>
-  
-          <Text style={styles.email}>
-            {item.email}
-          </Text>
+            <Text style={styles.name}>{item.firstName} {item.lastNmame}</Text>
+            <Text style={styles.email}>{item.email}</Text>
+            <Text styles={styles.phone}>{item.phone}</Text>
         </View>
   
         <View>
