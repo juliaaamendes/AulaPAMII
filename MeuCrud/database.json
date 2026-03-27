@@ -4,301 +4,351 @@
             "id": 1,
             "firstname": "João",
             "lastname": "Silva",
-            "email": "joao.silva@email.com"
+            "email": "joao.silva@email.com",
+            "phone": "(11) 91234-5678"
         },
         {
             "id": 2,
             "firstname": "Maria",
             "lastname": "Santos",
-            "email": "maria.santos@email.com"
+            "email": "maria.santos@email.com",
+            "phone": "(11) 92345-6789"
         },
         {
             "id": 3,
             "firstname": "Pedro",
             "lastname": "Oliveira",
-            "email": "pedro.oliveira@email.com"
+            "email": "pedro.oliveira@email.com",
+            "phone": "(21) 93456-7890"
         },
         {
             "id": 4,
             "firstname": "Ana",
             "lastname": "Souza",
-            "email": "ana.souza@email.com"
+            "email": "ana.souza@email.com",
+            "phone": "(31) 94567-8901"
         },
         {
             "id": 5,
             "firstname": "Carlos",
             "lastname": "Pereira",
-            "email": "carlos.pereira@email.com"
+            "email": "carlos.pereira@email.com",
+            "phone": "(41) 95678-9012"
         },
         {
             "id": 6,
             "firstname": "Juliana",
             "lastname": "Lima",
-            "email": "juliana.lima@email.com"
+            "email": "juliana.lima@email.com",
+            "phone": "(51) 96789-0123"
         },
         {
             "id": 7,
             "firstname": "Roberto",
             "lastname": "Alves",
-            "email": "roberto.alves@email.com"
+            "email": "roberto.alves@email.com",
+            "phone": "(61) 97890-1234"
         },
         {
             "id": 8,
             "firstname": "Fernanda",
             "lastname": "Gomes",
-            "email": "fernanda.gomes@email.com"
+            "email": "fernanda.gomes@email.com",
+            "phone": "(71) 98901-2345"
         },
         {
             "id": 9,
             "firstname": "Lucas",
             "lastname": "Martins",
-            "email": "lucas.martins@email.com"
+            "email": "lucas.martins@email.com",
+            "phone": "(81) 99012-3456"
         },
         {
             "id": 10,
             "firstname": "Patrícia",
             "lastname": "Rodrigues",
-            "email": "patricia.rodrigues@email.com"
+            "email": "patricia.rodrigues@email.com",
+            "phone": "(11) 90123-4567"
         },
         {
             "id": 11,
             "firstname": "Marcos",
             "lastname": "Ferreira",
-            "email": "marcos.ferreira@email.com"
+            "email": "marcos.ferreira@email.com",
+            "phone": "(11) 91234-5679"
         },
         {
             "id": 12,
             "firstname": "Camila",
             "lastname": "Almeida",
-            "email": "camila.almeida@email.com"
+            "email": "camila.almeida@email.com",
+            "phone": "(11) 92345-6780"
         },
         {
             "id": 13,
             "firstname": "Rafael",
             "lastname": "Nascimento",
-            "email": "rafael.nascimento@email.com"
+            "email": "rafael.nascimento@email.com",
+            "phone": "(11) 93456-7891"
         },
         {
             "id": 14,
             "firstname": "Beatriz",
             "lastname": "Costa",
-            "email": "beatriz.costa@email.com"
+            "email": "beatriz.costa@email.com",
+            "phone": "(11) 94567-8902"
         },
         {
             "id": 15,
             "firstname": "Bruno",
             "lastname": "Carvalho",
-            "email": "bruno.carvalho@email.com"
+            "email": "bruno.carvalho@email.com",
+            "phone": "(11) 95678-9013"
         },
         {
             "id": 16,
             "firstname": "Amanda",
             "lastname": "Araújo",
-            "email": "amanda.araujo@email.com"
+            "email": "amanda.araujo@email.com",
+            "phone": "(11) 96789-0124"
         },
         {
             "id": 17,
             "firstname": "Paulo",
             "lastname": "Melo",
-            "email": "paulo.melo@email.com"
+            "email": "paulo.melo@email.com",
+            "phone": "(11) 97890-1235"
         },
         {
             "id": 18,
             "firstname": "Larissa",
             "lastname": "Cardoso",
-            "email": "larissa.cardoso@email.com"
+            "email": "larissa.cardoso@email.com",
+            "phone": "(11) 98901-2346"
         },
         {
             "id": 19,
             "firstname": "André",
             "lastname": "Barros",
-            "email": "andre.barros@email.com"
+            "email": "andre.barros@email.com",
+            "phone": "(11) 99012-3457"
         },
         {
             "id": 20,
             "firstname": "Vanessa",
             "lastname": "Teixeira",
-            "email": "vanessa.teixeira@email.com"
+            "email": "vanessa.teixeira@email.com",
+            "phone": "(11) 90123-4568"
         },
         {
             "id": 21,
             "firstname": "Ricardo",
             "lastname": "Rocha",
-            "email": "ricardo.rocha@email.com"
+            "email": "ricardo.rocha@email.com",
+            "phone": "(21) 91234-5680"
         },
         {
             "id": 22,
             "firstname": "Mariana",
             "lastname": "Ribeiro",
-            "email": "mariana.ribeiro@email.com"
+            "email": "mariana.ribeiro@email.com",
+            "phone": "(21) 92345-6791"
         },
         {
             "id": 23,
             "firstname": "Eduardo",
             "lastname": "Mendes",
-            "email": "eduardo.mendes@email.com"
+            "email": "eduardo.mendes@email.com",
+            "phone": "(21) 93456-7902"
         },
         {
             "id": 24,
             "firstname": "Gabriela",
             "lastname": "Freitas",
-            "email": "gabriela.freitas@email.com"
+            "email": "gabriela.freitas@email.com",
+            "phone": "(21) 94567-8013"
         },
         {
             "id": 25,
             "firstname": "Fábio",
             "lastname": "Barbosa",
-            "email": "fabio.barbosa@email.com"
+            "email": "fabio.barbosa@email.com",
+            "phone": "(21) 95678-9124"
         },
         {
             "id": 26,
             "firstname": "Letícia",
             "lastname": "Pinto",
-            "email": "leticia.pinto@email.com"
+            "email": "leticia.pinto@email.com",
+            "phone": "(21) 96789-0235"
         },
         {
             "id": 27,
             "firstname": "Daniel",
             "lastname": "Moura",
-            "email": "daniel.moura@email.com"
+            "email": "daniel.moura@email.com",
+            "phone": "(21) 97890-1346"
         },
         {
             "id": 28,
             "firstname": "Renata",
             "lastname": "Cavalcanti",
-            "email": "renata.cavalcanti@email.com"
+            "email": "renata.cavalcanti@email.com",
+            "phone": "(21) 98901-2457"
         },
         {
             "id": 29,
             "firstname": "Gustavo",
             "lastname": "Dias",
-            "email": "gustavo.dias@email.com"
+            "email": "gustavo.dias@email.com",
+            "phone": "(21) 99012-3568"
         },
         {
             "id": 30,
             "firstname": "Tatiana",
             "lastname": "Moreira",
-            "email": "tatiana.moreira@email.com"
+            "email": "tatiana.moreira@email.com",
+            "phone": "(31) 91234-5690"
         },
         {
             "id": 31,
             "firstname": "Antônio",
             "lastname": "Correia",
-            "email": "antonio.correia@email.com"
+            "email": "antonio.correia@email.com",
+            "phone": "(31) 92345-6701"
         },
         {
             "id": 32,
             "firstname": "Natália",
             "lastname": "Cunha",
-            "email": "natalia.cunha@email.com"
+            "email": "natalia.cunha@email.com",
+            "phone": "(31) 93456-7812"
         },
         {
             "id": 33,
             "firstname": "Diego",
             "lastname": "Vieira",
-            "email": "diego.vieira@email.com"
+            "email": "diego.vieira@email.com",
+            "phone": "(31) 94567-8923"
         },
         {
             "id": 34,
             "firstname": "Carolina",
             "lastname": "Machado",
-            "email": "carolina.machado@email.com"
+            "email": "carolina.machado@email.com",
+            "phone": "(31) 95678-9034"
         },
         {
             "id": 35,
             "firstname": "Leonardo",
             "lastname": "Fogaça",
-            "email": "leonardo.fogaca@email.com"
+            "email": "leonardo.fogaca@email.com",
+            "phone": "(31) 96789-0145"
         },
         {
             "id": 36,
             "firstname": "Bianca",
             "lastname": "Monteiro",
-            "email": "bianca.monteiro@email.com"
+            "email": "bianca.monteiro@email.com",
+            "phone": "(31) 97890-1256"
         },
         {
             "id": 37,
             "firstname": "Thiago",
             "lastname": "Borges",
-            "email": "thiago.borges@email.com"
+            "email": "thiago.borges@email.com",
+            "phone": "(31) 98901-2367"
         },
         {
             "id": 38,
             "firstname": "Aline",
             "lastname": "Vargas",
-            "email": "aline.vargas@email.com"
+            "email": "aline.vargas@email.com",
+            "phone": "(31) 99012-3478"
         },
         {
             "id": 39,
             "firstname": "Alexandre",
             "lastname": "Nunes",
-            "email": "alexandre.nunes@email.com"
+            "email": "alexandre.nunes@email.com",
+            "phone": "(41) 91234-5700"
         },
         {
             "id": 40,
             "firstname": "Priscila",
             "lastname": "Fernandes",
-            "email": "priscila.fernandes@email.com"
+            "email": "priscila.fernandes@email.com",
+            "phone": "(41) 92345-6811"
         },
         {
             "id": 41,
             "firstname": "Rodrigo",
             "lastname": "Peixoto",
-            "email": "rodrigo.peixoto@email.com"
+            "email": "rodrigo.peixoto@email.com",
+            "phone": "(41) 93456-7922"
         },
         {
             "id": 42,
             "firstname": "Jéssica",
             "lastname": "Dantas",
-            "email": "jessica.dantas@email.com"
+            "email": "jessica.dantas@email.com",
+            "phone": "(41) 94567-8033"
         },
         {
             "id": 43,
             "firstname": "Vitor",
             "lastname": "Sales",
-            "email": "vitor.sales@email.com"
+            "email": "vitor.sales@email.com",
+            "phone": "(41) 95678-9144"
         },
         {
             "id": 44,
             "firstname": "Michele",
             "lastname": "Lopes",
-            "email": "michele.lopes@email.com"
+            "email": "michele.lopes@email.com",
+            "phone": "(41) 96789-0255"
         },
         {
             "id": 45,
             "firstname": "Hugo",
             "lastname": "Azevedo",
-            "email": "hugo.azevedo@email.com"
+            "email": "hugo.azevedo@email.com",
+            "phone": "(41) 97890-1366"
         },
         {
             "id": 46,
             "firstname": "Cláudia",
             "lastname": "Farias",
-            "email": "claudia.farias@email.com"
+            "email": "claudia.farias@email.com",
+            "phone": "(41) 98901-2477"
         },
         {
             "id": 47,
             "firstname": "Vinícius",
             "lastname": "Castro",
-            "email": "vinicius.castro@email.com"
+            "email": "vinicius.castro@email.com",
+            "phone": "(51) 91234-5711"
         },
         {
             "id": 48,
             "firstname": "Cristiane",
             "lastname": "Novaes",
-            "email": "cristiane.novaes@email.com"
+            "email": "cristiane.novaes@email.com",
+            "phone": "(51) 92345-6822"
         },
         {
             "id": 49,
             "firstname": "Felipe",
             "lastname": "Andrade",
-            "email": "felipe.andrade@email.com"
+            "email": "felipe.andrade@email.com",
+            "phone": "(51) 93456-7933"
         },
         {
             "id": 50,
             "firstname": "Elaine",
             "lastname": "Ramos",
-            "email": "elaine.ramos@email.com"
+            "email": "elaine.ramos@email.com",
+            "phone": "(51) 94567-8044"
         }
     ]
 }
