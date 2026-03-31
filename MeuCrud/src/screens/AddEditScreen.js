@@ -6,13 +6,13 @@ import { createPerson, updatePerson } from "../servers/peopleCrud";
 export default function AddEditScreen({ route, navigation }) {
   const person = route.params?.person;
 
-  const [firstName, setFirstName] = useState(person?.firstName || "");
-  const [lastName, setLastName] = useState(person?.lastName || "");
+  const [firstName, setFirstName] = useState(person?.firstname || "");
+  const [lastName, setLastName] = useState(person?.lastname || "");
   const [email, setEmail] = useState(person?.email || "");
   const [phone, setPhone] = useState(person?.phone || "");
 
   async function save(){
-    const data = { firstName, lastName, email, phone };
+    const data = { firstname, lastname, email, phone };
 
     if(person){
       await updatePerson(person.id, data);
@@ -52,7 +52,7 @@ export default function AddEditScreen({ route, navigation }) {
     
         <Button
           title="Salvar"
-          onPress={[save, () => navigation.goBack()]}
+          onPress={save}
         />
     
         <Button
