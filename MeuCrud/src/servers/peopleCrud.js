@@ -3,9 +3,6 @@ import { API_URL } from "./configApi";
 export async function getPeople() {
     const response = await fetch(`${API_URL}/people`);
     const data = await response.json();
-
-    console.log(data);
-
     return data;
 }
 

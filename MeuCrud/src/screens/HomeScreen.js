@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Button, TextInput } from 'react-native';
 import CardPersonal from '../components/CardPersonal';
+
 import styles from '../styles/styles';
 
-import { getPeople, deletePerson } from '../servers/peopleCrud';
+import { getPeople } from '../servers/peopleCrud';
 
 export default function HomeScreen({ navigation }) {
-
     // estado da lista
     const [people, setPeople] = useState([]);
-    const [search, setSearch] = useState(people);
-
+    const [filteredpeople, setFilteredPeople] = useState(people);
+    const [refreshing, setRefreshing] = useState(false);
     // função para carregar dados
-    async function loadPeople() {
-      try {
+    async function loadPeople(){
         const data = await getPeople();
-        console.log("Dados carregados:", data); // Verifique se os dados estão corretos
         setPeople(data);
-      } catch (error) {
-        console.error("Erro ao carregar pessoas:", error);
-      }
+        setFilteredPeople(data);
     }
 
     // executa ao abrir tela
@@ -29,23 +25,25 @@ export default function HomeScreen({ navigation }) {
 
   return(
       <View style={styles.container}>
+
           <TextInput
               placeholder="Pesquisar por nome"
-              style={styles.searchInput}
+              style={styles.input}
               onChangeText={(text) => {
                   const filtered = people.filter(p => 
                       `${p.firstname} ${p.lastname}`.toLowerCase().includes(text.toLowerCase())
                   );
-                  setSearch(filtered);
+                  setFilteredPeople(filtered);
               }}
           />
+
           <Button
               title="Adicionar Pessoa"
               onPress={() => navigation.navigate('AddEditScreen')}
           />
 
           <FlatList
-              data={search}
+              data={filteredpeople}
               keyExtractor={(item) => item.id.toString()}
 
               renderItem={({item}) => (
@@ -55,6 +53,8 @@ export default function HomeScreen({ navigation }) {
                       refresh={loadPeople}
                   />
               )}
+              onRefresh={loadPeople}
+              refreshing={refreshing}
           />
 
       </View>
