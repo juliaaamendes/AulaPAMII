@@ -1,52 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Button } from 'react-native';
-import AddEditScreen from './AddEditScreen';
-import database from "../database.json";
+import { View, Text, FlatList, Button, TextInput } from 'react-native';
+import CardPersonal from '../components/CardPersonal';
 
 import styles from '../styles/styles';
 
-import { getPeople, deletePerson } from '../servers/peopleCrud';
-
-function CardPersonal({item, navigation, refresh}){
-  return(
-    <View style={styles.card}>
-      <View>
-          <Text style={styles.name}>{item.firstName} {item.lastNmame}</Text>
-          <Text style={styles.email}>{item.email}</Text>
-          <Text styles={styles.phone}>{item.phone}</Text>
-      </View>
-
-      <View>
-
-        <Button
-          title="Editar"
-          onPress={() => navigation.navigate("AddEditScreen", {person:item})}
-        />
-
-        <Button
-          title="Deletar"
-          onPress={async () => {
-            await deletePerson(item.id);
-            refresh();
-          }}
-        />
-
-      </View>
-
-    </View>
-  )
-}
+import { getPeople } from '../servers/peopleCrud';
 
 export default function HomeScreen({ navigation }) {
-
     // estado da lista
     const [people, setPeople] = useState([]);
-
+    const [filteredpeople, setFilteredPeople] = useState(people);
+    const [refreshing, setRefreshing] = useState(false);
     // função para carregar dados
     async function loadPeople(){
         const data = await getPeople();
 
-        setPeople(data);
+        setFilteredPeople(data);
     }
 
     // executa ao abrir tela
@@ -56,7 +25,15 @@ export default function HomeScreen({ navigation }) {
 
   return(
       <View style={styles.container}>
-          <Text style={styles.title}>Pessoas</Text>
+
+          <TextInput
+              placeholder="Pesquisar por nome"
+              onChangeText={(text) => {
+                  const filtered = people.filter(p => 
+                      `${p.firstname} ${p.lastname}`.toLowerCase().includes(text.toLowerCase())
+                  );
+                  setFilteredPeople(filtered);
+              }}/>
 
           <Button
               title="Adicionar Pessoa"
@@ -64,7 +41,7 @@ export default function HomeScreen({ navigation }) {
           />
 
           <FlatList
-              data={people}
+              data={filteredpeople}
               keyExtractor={(item) => item.id.toString()}
 
               renderItem={({item}) => (
@@ -74,6 +51,8 @@ export default function HomeScreen({ navigation }) {
                       refresh={loadPeople}
                   />
               )}
+              onRefresh={loadPeople}
+              refreshing={refreshing}
           />
 
       </View>

@@ -1,1 +1,1 @@
-export const API_URL = "https://ninety-loops-watch.loca.lt/";
+export const API_URL = "https://dat-ict-understand-ask.trycloudflare.com";
