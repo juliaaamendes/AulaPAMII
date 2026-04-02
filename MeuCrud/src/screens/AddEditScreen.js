@@ -15,6 +15,7 @@ export default function AddEditScreen({ route, navigation }) {
 
   async function save(){
     const data = { firstname, lastname, email, phone };
+    const data = { firstname, lastname, email, phone };
 
     if(person){
       await updatePerson(person.id, data);

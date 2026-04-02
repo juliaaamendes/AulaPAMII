@@ -1,10 +1,41 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Button, TextInput } from 'react-native';
-import CardPersonal from '../components/CardPersonal';
+import { View, Text, FlatList, Button } from 'react-native';
+import AddEditScreen from './AddEditScreen';
+import database from "../database.json";
 
 import styles from '../styles/styles';
 
-import { getPeople } from '../servers/peopleCrud';
+import { getPeople, deletePerson } from '../servers/peopleCrud';
+
+function CardPersonal({item, navigation, refresh}){
+  return(
+    <View style={styles.card}>
+      <View>
+          <Text style={styles.name}>{item.firstName} {item.lastNmame}</Text>
+          <Text style={styles.email}>{item.email}</Text>
+          <Text styles={styles.phone}>{item.phone}</Text>
+      </View>
+
+      <View>
+
+        <Button
+          title="Editar"
+          onPress={() => navigation.navigate("AddEditScreen", {person:item})}
+        />
+
+        <Button
+          title="Deletar"
+          onPress={async () => {
+            await deletePerson(item.id);
+            refresh();
+          }}
+        />
+
+      </View>
+
+    </View>
+  )
+}
 
 export default function HomeScreen({ navigation }) {
     // estado da lista
@@ -12,10 +43,11 @@ export default function HomeScreen({ navigation }) {
     const [filteredpeople, setFilteredPeople] = useState(people);
     const [refreshing, setRefreshing] = useState(false);
     // função para carregar dados
-    async function loadPeople(){
+    async function loadPeople() {
+      try {
         const data = await getPeople();
 
-        setFilteredPeople(data);
+        setPeople(data);
     }
 
     // executa ao abrir tela
