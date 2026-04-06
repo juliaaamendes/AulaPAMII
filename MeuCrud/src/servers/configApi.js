@@ -1,1 +1,1 @@
-export const API_URL = "https://beauty-dim-relate-owners.trycloudflare.com";
+export const API_URL = "https://warranty-moderator-always-evidence.trycloudflare.com";

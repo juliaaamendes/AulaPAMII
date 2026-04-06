@@ -1,13 +1,6 @@
 {
   "people": [
     {
-      "firstname": "Pedro",
-      "lastname": "Oliveira",
-      "email": "pedro.oliveira@email.com",
-      "phone": "(21) 93456-7890",
-      "id": "3"
-    },
-    {
       "firstname": "Ana",
       "lastname": "Souza",
       "email": "ana.souza@email.com",
@@ -337,7 +330,7 @@
       "id": "Ry7hk9MjGNE"
     },
     {
-      "firstname": "Pedro",
+      "firstname": "João",
       "lastname": "Oliveira",
       "email": "pedro.oliveira@email.com",
       "phone": "(21) 93456-7890",
@@ -356,6 +349,13 @@
       "email": "julia.pereira@email.com",
       "phone": "(19) 99433-6011",
       "id": "N_3bwghcJzo"
+    },
+    {
+      "firstname": "Luana",
+      "lastname": "Greys",
+      "email": "luanagreys@email.com",
+      "phone": "(00) 000000000",
+      "id": "UeYu-8FvQV4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

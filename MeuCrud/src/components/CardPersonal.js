@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, ActivityIndicator, Alert } from "react-native";
+import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import { deletePerson } from "../servers/peopleCrud";
 import styles from "../styles/styles";
 import {Ionicons} from "@expo/vector-icons";
+import Alert from '@blazejkustra/react-native-alert';
 
 export default function CardPersonal({item, navigation, refresh}){
     const [loading, setLoading] = useState(false);
