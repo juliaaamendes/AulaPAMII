@@ -1,1 +1,1 @@
-export const API_URL = "https://dat-ict-understand-ask.trycloudflare.com";
+export const API_URL = "https://beauty-dim-relate-owners.trycloudflare.com";

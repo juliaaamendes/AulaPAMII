@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Button, TextInput } from 'react-native';
+import { View, TouchableOpacity, FlatList, Text, TextInput } from 'react-native';
 import CardPersonal from '../components/CardPersonal';
 
 import styles from '../styles/styles';
@@ -37,10 +37,13 @@ export default function HomeScreen({ navigation }) {
               }}
           />
 
-          <Button
-              title="Adicionar Pessoa"
-              onPress={() => navigation.navigate('AddEditScreen')}
-          />
+          <TouchableOpacity 
+            style={styles.addButton} 
+            onPress={() => navigation.navigate('AddEditScreen')} 
+            activeOpacity={0.7}
+            >
+              <Text style={styles.addButtonText}>Adicionar Pessoa</Text>
+          </TouchableOpacity>
 
           <FlatList
               data={filteredpeople}

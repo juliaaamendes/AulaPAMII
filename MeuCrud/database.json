@@ -1,7 +1,7 @@
 {
   "people": [
     {
-      "firstname": "Pero",
+      "firstname": "Pedro",
       "lastname": "Oliveira",
       "email": "pedro.oliveira@email.com",
       "phone": "(21) 93456-7890",
@@ -349,6 +349,13 @@
       "email": "maguire@maguari.com",
       "phone": "(19) 99999-9991",
       "id": "APyJz-BSl-4"
+    },
+    {
+      "firstname": "Julia",
+      "lastname": "Pereira",
+      "email": "julia.pereira@email.com",
+      "phone": "(19) 99433-6011",
+      "id": "N_3bwghcJzo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

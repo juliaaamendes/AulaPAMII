@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { View, TextInput, Button } from "react-native";
+import { View, TextInput, TouchableOpacity, Text, ScrollView } from "react-native";
 import styles from "../styles/styles";
 import { createPerson, updatePerson } from "../servers/peopleCrud";
-import HomeScreen from "./HomeScreen";
+
 
 export default function AddEditScreen({ route, navigation }) {
   const person = route.params?.person;
@@ -12,6 +12,7 @@ export default function AddEditScreen({ route, navigation }) {
   const [lastname, setLastName] = useState(person?.lastname || "");
   const [email, setEmail] = useState(person?.email || "");
   const [phone, setPhone] = useState(person?.phone || "");
+  const [focusedInput, setFocusedInput] = useState(null);
 
   async function save(){
     const data = { firstname, lastname, email, phone };
@@ -25,50 +26,55 @@ export default function AddEditScreen({ route, navigation }) {
     navigation.goBack();
   }
   return(
-      <View style={styles.container}>
-        <TextInput
-          placeholder="First Name"
-          value={firstname}
-          onChangeText={setFirstName}
-        />
-    
-        <TextInput
-          placeholder="Last Name"
-          value={lastname}
-          onChangeText={setLastName}
-        />
-    
-        <TextInput
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
-        />
+      <ScrollView style={styles.container} contentContainerStyle={styles.formContainer}>
+      <Text style={styles.label}>Nome</Text>
+      <TextInput
+        style={[styles.input, focusedInput === "firstName" && styles.inputFocused]}
+        value={firstname}
+        onChangeText={setFirstName}
+        placeholder="Digite o nome"
+        onFocus={() => setFocusedInput("firstName")}
+        onBlur={() => setFocusedInput(null)}
+      />
 
-        <TextInput
-            placeholder="Phone"
-            value={phone}
-            onChangeText={setPhone}
-            keyboardType="phone-pad"
-        />
-        
-        <Button
-          title="Salvar"
-          onPress={async() => {
-            console.log(edit)
-            if (edit === true) {
-              await updatePerson(person.id, { firstname, lastname, email, phone });
-            } else {
-              await createPerson({ firstname, lastname, email, phone });
-            };
-            navigation.replace("Home")
-          }}
-        />
-    
-        <Button
-          title="Cancelar"
-          onPress={() => navigation.goBack()}
-        />
+      <Text style={styles.label}>Sobrenome</Text>
+      <TextInput
+        style={[styles.input, focusedInput === "lastName" && styles.inputFocused]}
+        value={lastname}
+        onChangeText={setLastName}
+        placeholder="Digite o sobrenome"
+        onFocus={() => setFocusedInput("lastName")}
+        onBlur={() => setFocusedInput(null)}
+      />
+
+      <Text style={styles.label}>E-mail</Text>
+      <TextInput
+        style={[styles.input, focusedInput === "email" && styles.inputFocused]}
+        value={email}
+        onChangeText={setEmail}
+        placeholder="Digite o e-mail"
+        keyboardType="email-address"
+        autoCapitalize="none"
+        onFocus={() => setFocusedInput("email")}
+        onBlur={() => setFocusedInput(null)}
+      />
+
+      <Text style={styles.label}>Telefone</Text>
+      <TextInput
+        style={[styles.input, focusedInput === "phone" && styles.inputFocused]}
+        value={phone}
+        onChangeText={setPhone}
+        placeholder="(11) 99999-9999"
+        keyboardType="phone-pad"
+        onFocus={() => setFocusedInput("phone")}
+        onBlur={() => setFocusedInput(null)}
+      />
+
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.saveButton} onPress={save}>
+          <Text style={styles.saveButtonText}>Salvar</Text>
+        </TouchableOpacity>
       </View>
+    </ScrollView>
     )
 }
