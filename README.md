@@ -6,8 +6,6 @@ Um aplicativo mobile desenvolvido em React Native com Expo para gerenciamento de
 
 [![Assista ao vídeo](https://img.shields.io/badge/YouTube-Vídeo%20Demonstrativo-red?style=for-the-badge&logo=youtube)](SEU_LINK_DO_VIDEO_AQUI)
 
-*Substitua `SEU_LINK_DO_VIDEO_AQUI` pelo link do seu vídeo no YouTube ou outra plataforma.*
-
 ## ✨ Funcionalidades
 
 - ➕ **Adicionar Pessoa**: Cadastre novas pessoas com nome, sobrenome, e-mail e telefone
@@ -38,7 +36,7 @@ Um aplicativo mobile desenvolvido em React Native com Expo para gerenciamento de
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+   git clone https://github.com/juliaaamendes/AulaPAMII.git
    cd AulaPAMII/MeuCrud
    ```
 
