@@ -1,10 +1,11 @@
-import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, ActivityIndicator, Alert } from "react-native";
 import { deletePerson } from "../servers/peopleCrud";
 import styles from "../styles/styles";
 import {Ionicons} from "@expo/vector-icons";
 
 export default function CardPersonal({item, navigation, refresh}){
+    const [loading, setLoading] = useState(false);
     return(
       <View style={styles.card}>
         <View>
@@ -22,11 +23,39 @@ export default function CardPersonal({item, navigation, refresh}){
             <Text style={styles.buttonText}>Editar</Text>
           </TouchableOpacity>
   
-          <TouchableOpacity style={styles.deleteButton} onPress={async () => {
-            await deletePerson(item.id);
-            refresh();
-          }}>
-            <Text style={styles.buttonText}>Deletar</Text>
+          <TouchableOpacity style={styles.deleteButton} onPress={() => {
+            console.log('Delete button pressed for item:', item.id);
+            Alert.alert(
+              'Confirmar Exclusão',
+              'Tem certeza que deseja excluir esta pessoa?',
+              [
+                { text: 'Cancelar', style: 'cancel' },
+                {
+                  text: 'Excluir',
+                  style: 'destructive',
+                  onPress: async () => {
+                    console.log('Confirmed delete for item:', item.id);
+                    setLoading(true);
+                    try {
+                      await deletePerson(item.id);
+                      console.log('Delete successful, refreshing...');
+                      refresh();
+                    } catch (error) {
+                      console.log('Delete error:', error);
+                      Alert.alert('Erro', 'Não foi possível excluir. Tente novamente.');
+                    } finally {
+                      setLoading(false);
+                    }
+                  }
+                }
+              ]
+            );
+          }} disabled={loading}>
+            {loading ? (
+              <ActivityIndicator size="small" color="#ffffff" />
+            ) : (
+              <Text style={styles.buttonText}>Deletar</Text>
+            )}
           </TouchableOpacity>
   
         </View>

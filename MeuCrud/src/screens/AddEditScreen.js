@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TextInput, TouchableOpacity, Text, ScrollView } from "react-native";
+import { View, TextInput, TouchableOpacity, Text, ScrollView, ActivityIndicator, Alert } from "react-native";
 import styles from "../styles/styles";
 import { createPerson, updatePerson } from "../servers/peopleCrud";
 
@@ -13,17 +13,25 @@ export default function AddEditScreen({ route, navigation }) {
   const [email, setEmail] = useState(person?.email || "");
   const [phone, setPhone] = useState(person?.phone || "");
   const [focusedInput, setFocusedInput] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   async function save(){
-    const data = { firstname, lastname, email, phone };
+    setLoading(true);
+    try {
+      const data = { firstname, lastname, email, phone };
 
-    if(person){
-      await updatePerson(person.id, data);
-    } else {
-      await createPerson(data);
+      if(person){
+        await updatePerson(person.id, data);
+      } else {
+        await createPerson(data);
+      }
+
+      navigation.goBack();
+    } catch (error) {
+      Alert.alert('Erro', 'Não foi possível salvar. Verifique a conexão e tente novamente.');
+    } finally {
+      setLoading(false);
     }
-
-    navigation.goBack();
   }
   return(
       <ScrollView style={styles.container} contentContainerStyle={styles.formContainer}>
@@ -71,8 +79,12 @@ export default function AddEditScreen({ route, navigation }) {
       />
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.saveButton} onPress={save}>
-          <Text style={styles.saveButtonText}>Salvar</Text>
+        <TouchableOpacity style={styles.saveButton} onPress={save} disabled={loading}>
+          {loading ? (
+            <ActivityIndicator size="small" color="#ffffff" />
+          ) : (
+            <Text style={styles.saveButtonText}>Salvar</Text>
+          )}
         </TouchableOpacity>
       </View>
     </ScrollView>
