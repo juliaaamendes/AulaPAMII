@@ -1,13 +1,6 @@
 {
   "people": [
     {
-      "firstname": "Ana",
-      "lastname": "Souza",
-      "email": "ana.souza@email.com",
-      "phone": "(31) 94567-8901",
-      "id": "4"
-    },
-    {
       "id": "5",
       "firstname": "Carlos",
       "lastname": "Pereira",

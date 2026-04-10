@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { View, TouchableOpacity, FlatList, Text, TextInput, ActivityIndicator, Alert } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import CardPersonal from '../components/CardPersonal';
 
 import styles from '../styles/styles';
@@ -38,9 +39,11 @@ export default function HomeScreen({ navigation }) {
     }
 
     // executa ao abrir tela
-    useEffect(() => {
-        loadPeople();
-    }, []);
+    useFocusEffect(
+        useCallback(() => {
+            loadPeople();
+        }, [])
+    );
 
   return(
       <View style={styles.container}>

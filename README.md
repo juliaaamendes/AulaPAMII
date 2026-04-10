@@ -4,7 +4,7 @@ Um aplicativo mobile desenvolvido em React Native com Expo para gerenciamento de
 
 ## 🎥 Vídeo Demonstrativo
 
-[![Assista ao vídeo](https://img.shields.io/badge/YouTube-Vídeo%20Demonstrativo-red?style=for-the-badge&logo=youtube)](SEU_LINK_DO_VIDEO_AQUI)
+[![Assista ao vídeo](https://img.shields.io/badge/YouTube-Vídeo%20Demonstrativo-red?style=for-the-badge&logo=youtube)](https://youtu.be/z6JCQHriUoQ)
 
 ## ✨ Funcionalidades
 
@@ -21,8 +21,10 @@ Um aplicativo mobile desenvolvido em React Native com Expo para gerenciamento de
 - **Expo** - Plataforma para desenvolvimento e build
 - **React Navigation** - Navegação entre telas
 - **JSON Server** - API REST simulada para persistência de dados
+- **Cloudflared** - Tunneling para acesso remoto à API local
 - **Ionicons** - Ícones vetoriais
 - **Axios** - Cliente HTTP para requisições
+- **@blazejkustra/react-native-alert** - Alertas customizados para React Native
 
 ## 🚀 Como Executar
 
@@ -30,6 +32,7 @@ Um aplicativo mobile desenvolvido em React Native com Expo para gerenciamento de
 
 - Node.js (versão 18 ou superior)
 - Expo CLI
+- Cloudflared (para tunneling remoto)
 - Emulador Android/iOS ou dispositivo físico
 
 ### Instalação
@@ -42,18 +45,35 @@ Um aplicativo mobile desenvolvido em React Native com Expo para gerenciamento de
 
 2. **Instale as dependências:**
    ```bash
-   npm install
+   npm i
+   ```
+   ```bash
+   npm i @blazejkustra/react-native-alert @react-navigation/native @react-navigation/native-stack json-server expo @cloudflared
    ```
 
-3. **Inicie o servidor JSON (para simular a API):**
+### Execução pelo Computador (com Tunneling)
+
+Para executar o app no seu computador e acessar a API remotamente via celular:
+
+1. **Inicie o servidor JSON em uma aba do terminal:**
    ```bash
    npx json-server --watch database.json --port 3000
    ```
 
-4. **Execute o aplicativo:**
+2. **Em outra aba do terminal, crie um tunnel com Cloudflared:**
+   ```bash
+   npx cloudflared tunnel --url http://localhost:3000
+   ```
+   - altere em `src/servers/configApi.js` a URL HTTPS pela gerada (ex: https://abc123.trycloudflare.com)
+
+3. **Execute o aplicativo:**
    ```bash
    npm start
    ```
+
+4. **No celular:**
+   - Instale o app Expo Go.
+   - Escaneie o QR code exibido no terminal.
 
 ### Plataformas Suportadas
 
